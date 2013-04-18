@@ -1,0 +1,17 @@
+{ "features": [
+  {
+    "geometry" : {
+      "type": "Point",
+      "coordinates" : [139.7667,35.6833]
+    },
+    "properties" : {
+      "group" : {
+        "name" : "branches"
+      },
+      "images" : [
+        { "url" : "url" }
+      ]
+    }
+  }
+  ]
+}
