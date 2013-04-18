@@ -125,8 +125,7 @@
     
     $.ajax({
       dataType: "json",
-      //url: "http://localhost:3000/temperatures",
-      url: "data/locations",
+      url: "data/locations.json",
       success: function(collection) {
         var data = collection.features;
         
