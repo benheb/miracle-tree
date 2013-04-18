@@ -90,9 +90,8 @@
         .style("fill", function() { return "#44aaee" })
         .on("mouseover", function(e){d3.select(this).style("fill", "#5522aa")})
         .on("mouseout", function(e){d3.select(this).style("fill", "#44aaee")})
-        .attr('d', getLocations);
       });
-    
+    getLocations();
   }
   
   function redraw() {
