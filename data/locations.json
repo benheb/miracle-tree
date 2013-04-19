@@ -2,16 +2,147 @@
   {
     "geometry" : {
       "type": "Point",
-      "coordinates" : [139.7667,35.6833]
+      "coordinates" : [139.75842,35.697369]
     },
     "properties" : {
-      "group" : {
-        "name" : "branches"
+      "info" : {
+        "group" : "branches",
+        "location" : "Planner Tokyo Stamp Cooperative Society"
       },
       "images" : [
-        { "url" : "url" }
+        { "url" : "img/branches-1.jpeg" },
+        { "url" : "img/branches-2.jpeg" },
+        { "url" : "img/branches-3.jpeg" },
+        { "url" : "img/branches-4.jpeg" },
+        { "url" : "img/branches-5.jpeg" },
+        { "url" : "img/branches-6.jpeg" }
+      ]
+    }
+  },{
+    "geometry" : {
+      "type": "Point",
+      "coordinates" : [136.652207,36.568606]
+    },
+    "properties" : {
+      "info" : {
+        "group" : "branches",
+        "location" : "Tsurumi Stamp"
+      },
+      "images" : [
+        { "url" : "img/branches-1.jpeg" },
+        { "url" : "img/branches-2.jpeg" },
+        { "url" : "img/branches-3.jpeg" },
+        { "url" : "img/branches-4.jpeg" },
+        { "url" : "img/branches-5.jpeg" },
+        { "url" : "img/branches-6.jpeg" }
+      ]
+    }
+  },{
+    "geometry" : {
+      "type": "Point",
+      "coordinates" : [135.491094,34.696359]
+    },
+    "properties" : {
+      "info" : {
+        "group" : "branches",
+        "location" : "WPCs (Wood Plastic Composites)",
+        "story" : "Modification of a piece cut from the branch"
+      },
+      "images" : [
+        { "url" : "img/branches-1.jpeg" },
+        { "url" : "img/branches-2.jpeg" },
+        { "url" : "img/branches-3.jpeg" },
+        { "url" : "img/branches-4.jpeg" },
+        { "url" : "img/branches-5.jpeg" },
+        { "url" : "img/branches-6.jpeg" }
+      ]
+    }
+  },{
+    "geometry" : {
+      "type": "Point",
+      "coordinates" : [140.025183,36.11467]
+    },
+    "properties" : {
+      "info" : {
+        "group" : "cloning",
+        "location" : "Sumitomo Forestry Co., LTD",
+        "story" : "Cloning success around 12/2012"
+      },
+      "images" : [
+        { "url" : "img/cloning.jpeg" }
+      ]
+    }
+  },{
+    "geometry" : {
+      "type": "Point",
+      "coordinates" : [139.748238,35.673144]
+    },
+    "properties" : {
+      "info" : {
+        "group" : "coins",
+        "location" : "The Ministry of Finance",
+        "story" : ""
+      },
+      "images" : [
+        { "url" : "img/coins.jpeg" }
+      ]
+    }
+  },{
+    "geometry" : {
+      "type": "Point",
+      "coordinates" : [136.794418,35.046534]
+    },
+    "properties" : {
+      "info" : {
+        "group" : "trunks",
+        "location" : "Yatomi lumberer",
+        "story" : "Received the trunks 09/16/12"
+      },
+      "images" : [
+        { "url" : "img/trunk-a-1.jpeg" },
+        { "url" : "img/trunk-a-2.jpeg" },
+        { "url" : "img/trunk-a-3.jpeg" }
+      ]
+    }
+  },{
+    "geometry" : {
+      "type": "Point",
+      "coordinates" : [134.544308,34.846456]
+    },
+    "properties" : {
+      "info" : {
+        "group" : "trunks",
+        "location" : "",
+        "story" : "Kado Corporation (tree-carbon assembly)"
+      },
+      "images" : [
+        { "url" : "img/trunk-b-1.jpeg" },
+        { "url" : "img/trunk-b-2.jpeg" }
+      ]
+    }
+  },{
+    "geometry" : {
+      "type": "Point",
+      "coordinates" : [141.625499,39.003225]
+    },
+    "properties" : {
+      "info" : {
+        "group" : "cutting",
+        "location" : "",
+        "story" : "The trunk cut into three pieces"
+      },
+      "images" : [
+        { "url" : "img/cutting-1.jpeg" },
+        { "url" : "img/cutting-2.jpeg" },
+        { "url" : "img/cutting-3.jpeg" },
+        { "url" : "img/cutting-4.jpeg" },
+        { "url" : "img/cutting-5.jpeg" },
+        { "url" : "img/cutting-6.jpeg" }
+        
       ]
     }
   }
+  
+  
   ]
 }

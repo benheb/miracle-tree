@@ -12,8 +12,8 @@
     stepInterval = null;
   
   function init() { 
-    var width = 900,
-      height = 700;
+    var width = $(window).width(),
+      height = $(window).height();
    
    scales = {
      0: 0,
@@ -29,7 +29,7 @@
    
    projection = d3.geo.mercator()
     .rotate([90, 1])
-    .center([-133,38 ])
+    .center([-133,37 ])
     .scale(4000);
     
     path = d3.geo.path()
@@ -52,15 +52,8 @@
       else {
         projection.scale(s * 0.9);
       }
-      d3.selectAll('.start')
-        .attr("transform", function(d) { return "translate(" + projection([d.startLon,d.startLat]) + ")";});
-      d3.selectAll('.scales')
-        .attr("transform", function(d) { return "translate(" + projection([d.endLon,d.endLat]) + ")";});
-      d3.selectAll('.lines')
-        .attr("x1", function(d) {return projection([d.startLon,d.startLat])[0] })
-        .attr("y1", function(d) {return projection([d.startLon,d.startLat])[1] })
-        .attr("x2", function(d) {return projection([d.endLon,d.endLat])[0] })
-        .attr("y2", function(d) {return projection([d.endLon,d.endLat])[1] });
+      d3.selectAll('.locations')
+        .attr("transform", function(d) { return "translate(" + projection([d.geometry.coordinates[0],d.geometry.coordinates[1]]) + ")";});
           
       svg.selectAll("path").attr("d", path);
     });
@@ -84,14 +77,16 @@
   */
   function addJapan() {
     d3.json("data/japan.json", function(data) {
-        svg.selectAll("path").data(data.features)
-        .enter().append("path")
-        .attr("d", path)
-        .style("fill", function() { return "#44aaee" })
-        .on("mouseover", function(e){d3.select(this).style("fill", "#5522aa")})
-        .on("mouseout", function(e){d3.select(this).style("fill", "#44aaee")})
-      });
-    getLocations();
+      svg.selectAll("path").data(data.features)
+      .enter().append("path")
+      .attr("d", path)
+      .style("fill", function() { return "#444" });
+      //.style("fill", function() { return "#44aaee" });
+      //.on("mouseover", function(e){d3.select(this).style("fill", "#5522aa")})
+      //.on("mouseout", function(e){d3.select(this).style("fill", "#44aaee")});
+      
+      getLocations();
+    });
   }
   
   function redraw() {
@@ -103,8 +98,8 @@
     
     var t = projection.translate();
     
-    d3.selectAll('.start')
-      .attr("transform", function(d) { return "translate(" + projection([d.startLon,d.startLat]) + ")";});
+    d3.selectAll('.locations')
+      .attr("transform", function(d) { return "translate(" + projection([d.geometry.coordinates[0],d.geometry.coordinates[1]]) + ")";});
     d3.selectAll('.scales')
       .attr("transform", function(d) { return "translate(" + projection([d.endLon,d.endLat]) + ")";});
     d3.selectAll('.lines')
@@ -134,134 +129,27 @@
         .selectAll("circle")
           .data( data )
         .enter().append("circle")
+          .attr('class', 'locations')
           .attr("transform", function(d) {console.log(d.geometry.coordinates); return "translate(" + projection([d.geometry.coordinates[0],d.geometry.coordinates[1]]) + ")";})
-          .attr("fill", "#FFF")
-          .attr('r', 10)
+          .attr("fill", styler)
+          .attr('r', 5)
+          .on('mouseover', function( d ) {
+            d3.select(this)
+              .transition()
+                .duration(300)
+                .attr('r', 12)
+                .attr('d', hover);
+          })
+          .on("mouseout", function( d ) {
+            d3.select(this)
+              .transition()
+                .duration(300)
+                .attr('r', 5)
+                .attr('d', exit);
+          });
       }
     });
   }
-  
-  /*
-   * Draw tornado paths if they exist
-   * 
-   */
-  function drawLines( d ) {
-    
-    if (d.endLat != "-") {
-      var lines = svg.append('g');
-      
-      lines.selectAll("line")
-        .data([d])
-      .enter().append('line')
-        .style("stroke", '#FFF')
-        .attr('class', 'lines')
-        .attr("x1", projection([d.startLon,d.startLat])[0])
-        .attr("y1", projection([d.startLon,d.startLat])[1])
-        .attr("x2", projection([d.startLon,d.startLat])[0])
-        .attr("y2", projection([d.startLon,d.startLat])[1])
-        .transition()
-          .duration(2000)
-          .attr("x2", projection([d.endLon,d.endLat])[0])
-          .attr("y2", projection([d.endLon,d.endLat])[1])
-          .each('end', function() { endCircle( d )});
-          
-    }    
-  }
-
-  /*
-   * 
-   * Animate by date
-   * 
-   */
-  function iterator( start, end ) {
-    var prev = start;
-    
-    window.renderInterval = setInterval(function() {
-      d3.selectAll('.start')
-        .attr('r', function(d) {
-          if ( d.date < start ) {
-            var val = ( scale(parseInt(d.scale)) < 0 ) ? 1 : scale(parseInt(d.scale));
-            return val;
-          }
-          prev = start;
-        });
-        
-        if (start >= end) clearInterval(renderInterval);
-        
-        start = start + 8640000;
-        $('#info-window').html(new Date(start).toLocaleString());
-    },10)
-  }   
-  
-  /*
-   * scale boxes for sorting
-   * 
-   */
-  function drawScaleBoxes( d ) {
-    var colors = [ "rgb(253,219,199)", "rgb(247,247,247)", "rgb(209,229,240)", "rgb(146,197,222)", "rgb(67,147,195)", "rgb(33,102,172)", "rgb(5,48,97)"]
-    colors = colors.reverse();
-    
-    $('#f0').html('F0: ' + scales[0]).css('background', colors[ 0 ]);
-    $('#f1').html('F1: ' + scales[1]).css('background', colors[ 1 ]);
-    $('#f2').html('F2: ' + scales[2]).css('background', colors[ 2 ]);
-    $('#f3').html('F3: ' + scales[3]).css('background', colors[ 3 ]);
-    $('#f4').html('F4: ' + scales[4]).css('background', colors[ 4 ]);
-    $('#f5').html('F5: ' + scales[5]).css('background', colors[ 6 ]);
-    
-    $('.scale-box').mouseover(function( e ) {
-      var id = $(this).attr('id').replace(/f/, '');
-      $(this).css('border', '1px solid #FFF');
-      d3.selectAll('.scales')
-        .transition()
-          .duration(100)
-          .attr('r', 0)
-        .transition()
-          .duration(400)
-          .attr("r", function( d ) { if (d.scale == id ) return scale(parseInt(d.scale) + 3) });
-    }).mouseout(function() {
-      $(this).css('border', '1px solid #444');
-      d3.selectAll('.scales')
-        .transition()
-        .duration(500)
-        .attr('r', function( d ) { return scale(parseInt(d.scale))});
-    });
-    
-    
-  }
-  /*
-   * Draw circles after paths are drawn, size by F-Scale
-   * 
-   */
-  function endCircle( data ) {
-    var injuries = svg.append("g")
-    
-    injuries.selectAll("circle")
-      .data([data])
-    .enter().append('circle')
-      .attr("transform", function(d) { ;return "translate(" + projection([data.endLon,data.endLat]) + ")";})
-      .attr("fill", styler(data))
-      .attr('class', 'scales')
-      .attr('r', function() { return scale(parseInt(data.scale))})
-      .style('fill-opacity', 0)
-      .on('mouseover', function(d) { 
-        d3.select(this)
-          .transition()
-            .duration(300)
-            .attr('r', scale(parseInt(data.scale) + 4))
-            .attr('d', hover);
-      })
-      .on('mouseout', function() {
-        d3.select(this)
-          .transition()
-          .duration(300)
-          .attr('r', scale(parseInt(data.scale)))
-      })
-      .transition()
-        .duration(1000)
-        .style("fill-opacity", 0.5);
-     
-  }
-  
   
   /*
    * 
@@ -269,14 +157,59 @@
    * 
    */
   function hover( d ) {
-    var injuries = d.injuries;
-    var scale = d.scale;
-    var damage = d.damage;
-    var state = d.state;
-    var county = d.county;
-    $('#info-window').html( '<span style="font-weight:bold"> State: ' + state + '</span><br /><span> County: ' + county + '</span><br /><span> Injured: ' + injuries + '</span><br /><span>F-scale: '+ scale + '</span><br /><span> Damage: ' + damage + '</span>').fadeIn(1500);
+    $('#info-window-inner').html("");
     
+    var group = d.properties.info.group;
+    var lat = d.geometry.coordinates[1];
+    var lon = d.geometry.coordinates[0];
+    var story = ( d.properties.info.story ) ? d.properties.info.story : "";
+    var images = d.properties.images;
+    
+    $('#info-window-inner').html( "<div class='info-window-story'>" + story + "</div>" );
+    
+    if ( images.length ) {
+      for (i in images) {
+        var img = "<img src='"+images[ i ].url+"' style='width:400px;'></img>";
+        $('#info-window-inner').append(img);
+      }
+    }
+    
+    //lines
+    var locs = [];
+    d3.selectAll('.locations')
+      .attr("attr", function(d) { 
+        if (d.properties.info.group == group) locs.push( {lat : d.geometry.coordinates[1], lon: d.geometry.coordinates[0] }) 
+      });
+    
+    for (var i=0;i<locs.length;i++) {
+      if ( locs[ i ].lat !== lat ) {
+        var lat1 = locs[ i ].lat;
+        var lon1 = locs[ i ].lon;
+      
+        var lines = svg.append('g');
+          
+        lines.selectAll("line")
+          .data([d])
+        .enter().append('line')
+          .style("stroke", styler)
+          .attr('class', 'lines')
+          .attr("x1", projection([lon,lat])[0])
+          .attr("y1", projection([lon,lat])[1])
+          .attr("x2", projection([lon,lat])[0])
+          .attr("y2", projection([lon,lat])[1])
+          .transition()
+            .duration(900)
+            .attr("x2", projection([lon1,lat1])[0])
+            .attr("y2", projection([lon1,lat1])[1]);
+       }
+    }  
   }
+  
+  function exit() {
+    d3.selectAll(".lines").remove(); 
+        
+    svg.selectAll("path").attr("d", path);
+  };
   
   /*
    * 
@@ -284,32 +217,26 @@
    * 
    */
   function styler( data ) {
-    var strength = data.scale;
-    var colors = [ "rgb(253,219,199)", "rgb(247,247,247)", "rgb(209,229,240)", "rgb(146,197,222)", "rgb(67,147,195)", "rgb(33,102,172)", "rgb(5,48,97)"] 
-    colors = colors.reverse();
+    var group = data.properties.info.group;
+    //var colors = [ "rgb(253,219,199)", "rgb(247,247,247)", "rgb(209,229,240)", "rgb(146,197,222)", "rgb(67,147,195)", "rgb(33,102,172)", "rgb(5,48,97)"]
+    var colors = ["rgb(215,48,39)", "rgb(244,109,67)", "rgb(253,174,97)", "rgb(254,224,144)", "rgb(255,255,191)", "rgb(224,243,248)", "rgb(171,217,233)", "rgb(116,173,209)", "rgb(69,117,180)"] 
     var color;
     
     switch ( true ) {
-      case ( strength == 0 ) :
+      case ( group == "branches" ) :
         color = colors[0];
         break;
-      case ( strength < 1 ) :
+      case ( group == "cloning" ) :
         color = colors[1];
         break;
-      case ( strength < 2 ) : 
-        color = colors[2]
+      case ( group == "coins" ) :
+        color = colors[2];
         break;
-      case ( strength < 3 ) : 
-        color = colors[3]
+      case ( group == "trunks" ) :
+        color = colors[3];
         break;
-      case ( strength < 4 ) : 
-        color = colors[4]
-        break;
-      case ( strength < 5 ) : 
-        color = colors[5]
-        break;
-      case ( strength < 6 ) : 
-        color = colors[6]
+      case ( group == "cutting" ) :
+        color = colors[4];
         break;
     }
     return color;
