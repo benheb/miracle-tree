@@ -1,15 +1,14 @@
 body {
-  background: url(texture-noise.png);
   overflow: hidden;
   margin: 0;
   font-size: 14px;
-  background:#000000;
+  background:#EEE;
   font-family: "Helvetica Neue", Helvetica;
 }
 #title {
   font-weight:bold;
   font-size:30px;
-  color:#999;
+  color:#444;
   width:380px;
   margin:auto;
   margin-top:10px;
@@ -23,10 +22,15 @@ body {
 }
 #header {
   width: 100%;
-  text-align:center;
+  height: 70px;
+  box-shadow: 0px -12px 44px 0px #999;
+  overflow: hidden;
+  z-index: 1000;
 }
-#header h3 {
-  color:#FEFEFE;
+#header h2 {
+  color:#0088cc;
+  margin-left:20px;
+  margin-top:15px;
 }
 #map {
   width:100%;
@@ -88,6 +92,19 @@ a:hover {
   color: #888;
 }
 
+.bold {
+  font-weight:bold;
+}
+
+#tooltip {
+  position:absolute;
+  bottom:10px;
+  right:0px;
+  text-align:center;
+  width:400px;
+  font-size:10pt;
+}
+
 .hint {
   position: absolute;
   right: 0;
@@ -97,24 +114,24 @@ a:hover {
 }
 
 #intro {
-  font-size: 12pt;
-  line-height: 36px;
+  font-size: 17pt;
+  line-height: 59px;
+  color: #888;
+  margin: 10px;
+  text-align: center;
 }
+
 #info-window {
   position: absolute;
-  z-index: 100;
+  z-index: 1000;
   width: 420px;
   text-align: left;
   color: #FFF;
   font-size: 15pt;
-  top: 0px;
-  background:transparent url('../img/gray_80.png');
+  top: 70px;
+  background: transparent url('../img/gray_80.png');
   right: 0px;
   height: 100%;
-}
-
-#info-window span {
-  display:block;
 }
 
 #legend-wrap {
@@ -192,14 +209,14 @@ a:hover {
 }
 
 #info-window-inner {
-  margin: 10px;
-  height:90%;
-  overflow: hidden;
+  height:83%;
   overflow-y: auto;
 }
 
 #info-window-inner img {
-  margin-bottom:5px;
+  margin-bottom: 20px;
+  box-shadow: 1px 4px 25px -3px #444;
+  margin-left: 15px;
 }
 
 .info-window-story {

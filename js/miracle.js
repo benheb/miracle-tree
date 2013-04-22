@@ -80,7 +80,7 @@
       svg.selectAll("path").data(data.features)
       .enter().append("path")
       .attr("d", path)
-      .style("fill", function() { return "#444" });
+      .style("fill", function() { return "#777" });
       //.style("fill", function() { return "#44aaee" });
       //.on("mouseover", function(e){d3.select(this).style("fill", "#5522aa")})
       //.on("mouseout", function(e){d3.select(this).style("fill", "#44aaee")});
@@ -157,6 +157,7 @@
    * 
    */
   function hover( d ) {
+    $('#intro').hide();
     $('#info-window-inner').html("");
     
     var group = d.properties.info.group;
@@ -169,7 +170,7 @@
     
     if ( images.length ) {
       for (i in images) {
-        var img = "<img src='"+images[ i ].url+"' style='width:400px;'></img>";
+        var img = "<img src='"+images[ i ].url+"' style='width:390px;'></img>";
         $('#info-window-inner').append(img);
       }
     }
