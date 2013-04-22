@@ -161,12 +161,13 @@
     $('#info-window-inner').html("");
     
     var group = d.properties.info.group;
+    var location = d.properties.info.location;
     var lat = d.geometry.coordinates[1];
     var lon = d.geometry.coordinates[0];
     var story = ( d.properties.info.story ) ? d.properties.info.story : "";
     var images = d.properties.images;
     
-    $('#info-window-inner').html( "<div class='info-window-story'>" + story + "</div>" );
+    $('#info-window-inner').html( "<div class='info-window-group'>" + group + "</div><div class='info-window-location'>" + location + "</div>" );
     
     if ( images.length ) {
       for (i in images) {
@@ -224,19 +225,19 @@
     var color;
     
     switch ( true ) {
-      case ( group == "branches" ) :
+      case ( group == "Miracle Tree Stamps" ) :
         color = colors[0];
         break;
-      case ( group == "cloning" ) :
+      case ( group == "Miracle Tree Cloning" ) :
         color = colors[1];
         break;
-      case ( group == "coins" ) :
+      case ( group == "Miracle Tree Coins" ) :
         color = colors[2];
         break;
-      case ( group == "trunks" ) :
+      case ( group == "Miracle Tree Trunks" ) :
         color = colors[3];
         break;
-      case ( group == "cutting" ) :
+      case ( group == "Miracle Tree Cutting" ) :
         color = colors[4];
         break;
     }

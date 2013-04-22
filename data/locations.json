@@ -6,16 +6,11 @@
     },
     "properties" : {
       "info" : {
-        "group" : "branches",
+        "group" : "Miracle Tree Stamps",
         "location" : "Planner Tokyo Stamp Cooperative Society"
       },
       "images" : [
-        { "url" : "img/branches-1.jpeg" },
-        { "url" : "img/branches-2.jpeg" },
-        { "url" : "img/branches-3.jpeg" },
-        { "url" : "img/branches-4.jpeg" },
-        { "url" : "img/branches-5.jpeg" },
-        { "url" : "img/branches-6.jpeg" }
+        { "url" : "img/branches-1.jpeg" }
       ]
     }
   },{
@@ -25,12 +20,10 @@
     },
     "properties" : {
       "info" : {
-        "group" : "branches",
+        "group" : "Miracle Tree Stamps",
         "location" : "Tsurumi Stamp"
       },
       "images" : [
-        { "url" : "img/branches-1.jpeg" },
-        { "url" : "img/branches-2.jpeg" },
         { "url" : "img/branches-3.jpeg" },
         { "url" : "img/branches-4.jpeg" },
         { "url" : "img/branches-5.jpeg" },
@@ -44,17 +37,12 @@
     },
     "properties" : {
       "info" : {
-        "group" : "branches",
+        "group" : "Miracle Tree Stamps",
         "location" : "WPCs (Wood Plastic Composites)",
         "story" : "Modification of a piece cut from the branch"
       },
       "images" : [
-        { "url" : "img/branches-1.jpeg" },
-        { "url" : "img/branches-2.jpeg" },
-        { "url" : "img/branches-3.jpeg" },
-        { "url" : "img/branches-4.jpeg" },
-        { "url" : "img/branches-5.jpeg" },
-        { "url" : "img/branches-6.jpeg" }
+        { "url" : "img/branches-2.jpeg" }
       ]
     }
   },{
@@ -64,7 +52,7 @@
     },
     "properties" : {
       "info" : {
-        "group" : "cloning",
+        "group" : "Miracle Tree Cloning",
         "location" : "Sumitomo Forestry Co., LTD",
         "story" : "Cloning success around 12/2012"
       },
@@ -79,7 +67,7 @@
     },
     "properties" : {
       "info" : {
-        "group" : "coins",
+        "group" : "Miracle Tree Coins",
         "location" : "The Ministry of Finance",
         "story" : ""
       },
@@ -94,7 +82,7 @@
     },
     "properties" : {
       "info" : {
-        "group" : "trunks",
+        "group" : "Miracle Tree Trunks",
         "location" : "Yatomi lumberer",
         "story" : "Received the trunks 09/16/12"
       },
@@ -111,7 +99,7 @@
     },
     "properties" : {
       "info" : {
-        "group" : "trunks",
+        "group" : "Miracle Tree Trunks",
         "location" : "",
         "story" : "Kado Corporation (tree-carbon assembly)"
       },
@@ -127,7 +115,7 @@
     },
     "properties" : {
       "info" : {
-        "group" : "cutting",
+        "group" : "Miracle Tree Cutting",
         "location" : "",
         "story" : "The trunk cut into three pieces"
       },
