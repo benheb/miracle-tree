@@ -116,9 +116,22 @@ a:hover {
 #intro {
   font-size: 17pt;
   line-height: 59px;
-  color: #888;
+  color: #777;
   margin: 10px;
   text-align: center;
+}
+
+#info-window-wrapper {
+  background: transparent url('../img/miracle-tree-large.png');
+  overflow:hidden;
+  position: absolute;
+  z-index: 1000;
+  width: 420px;
+  text-align: left;
+  top: 70px;
+  right: 0px;
+  height: 100%;
+
 }
 
 #info-window {
@@ -128,7 +141,7 @@ a:hover {
   text-align: left;
   color: #FFF;
   font-size: 15pt;
-  top: 70px;
+  top: 0px;
   background: transparent url('../img/gray_80.png');
   right: 0px;
   height: 100%;

@@ -54,6 +54,13 @@
       }
       d3.selectAll('.locations')
         .attr("transform", function(d) { return "translate(" + projection([d.geometry.coordinates[0],d.geometry.coordinates[1]]) + ")";});
+      
+      d3.selectAll('.tree-icon')
+        .attr("transform", function(d) { 
+            if (d.geometry.coordinates[ 0 ] === 141.625499) {
+              return "translate(" + projection([d.geometry.coordinates[0],d.geometry.coordinates[1]]) + ")";
+            }
+          })
           
       svg.selectAll("path").attr("d", path);
     });
@@ -80,7 +87,7 @@
       svg.selectAll("path").data(data.features)
       .enter().append("path")
       .attr("d", path)
-      .style("fill", function() { return "#777" });
+      .style("fill", function() { return "#666" });
       //.style("fill", function() { return "#44aaee" });
       //.on("mouseover", function(e){d3.select(this).style("fill", "#5522aa")})
       //.on("mouseout", function(e){d3.select(this).style("fill", "#44aaee")});
@@ -100,14 +107,13 @@
     
     d3.selectAll('.locations')
       .attr("transform", function(d) { return "translate(" + projection([d.geometry.coordinates[0],d.geometry.coordinates[1]]) + ")";});
-    d3.selectAll('.scales')
-      .attr("transform", function(d) { return "translate(" + projection([d.endLon,d.endLat]) + ")";});
-    d3.selectAll('.lines')
-      .attr("x1", function(d) {return projection([d.startLon,d.startLat])[0] })
-      .attr("y1", function(d) {return projection([d.startLon,d.startLat])[1] })
-      .attr("x2", function(d) {return projection([d.endLon,d.endLat])[0] })
-      .attr("y2", function(d) {return projection([d.endLon,d.endLat])[1] });
-        
+    d3.selectAll('.tree-icon')
+        .attr("transform", function(d) { 
+            if (d.geometry.coordinates[ 0 ] === 141.625499) {
+              return "translate(" + projection([d.geometry.coordinates[0],d.geometry.coordinates[1]]) + ")";
+            }
+        });
+          
     svg.selectAll("path").attr("d", path);
   }
   
@@ -130,7 +136,7 @@
           .data( data )
         .enter().append("circle")
           .attr('class', 'locations')
-          .attr("transform", function(d) {console.log(d.geometry.coordinates); return "translate(" + projection([d.geometry.coordinates[0],d.geometry.coordinates[1]]) + ")";})
+          .attr("transform", function(d) { return "translate(" + projection([d.geometry.coordinates[0],d.geometry.coordinates[1]]) + ")";})
           .attr("fill", styler)
           .attr('r', 5)
           .on('mouseover', function( d ) {
@@ -147,6 +153,23 @@
                 .attr('r', 5)
                 .attr('d', exit);
           });
+       
+        svg.append("g")
+          .attr("class", "icon")
+        .selectAll('image')
+          .data( data )
+        .enter().append('svg:image')
+          .attr("class", "tree-icon")  
+          .attr("xlink:href", "img/miracle-tree.png")
+          .attr("transform", function(d) { 
+            if (d.geometry.coordinates[ 0 ] === 141.625499) {
+              return "translate(" + projection([d.geometry.coordinates[0],d.geometry.coordinates[1]]) + ")";
+            }
+          })
+          .attr('x', '-25px')
+          .attr('y', '-50px')
+          .attr("width", "50px")
+          .attr("height", "50px");
       }
     });
   }
