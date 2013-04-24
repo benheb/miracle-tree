@@ -263,6 +263,30 @@
       case ( group == "Miracle Tree Cutting" ) :
         color = colors[4];
         break;
+      case ( group == "Miracle Tree Shipping" ) :
+        color = colors[5];
+        break;
+      case ( group == "Tohoku University" ) :
+        color = colors[6];
+        break;
+      case ( group == "Announced Dead" ) :
+        color = colors[7];
+        break;
+      case ( group == "Miracle Tree Planning" ) :
+        color = colors[8];
+        break;
+      case ( group == "Miracle Tree Uprooted" ) :
+        color = colors[9];
+        break;
+      case ( group == "Miracle Tree Branches" ) :
+        color = colors[10];
+        break;
+      case ( group == "Miracle Tree Rings" ) :
+        color = colors[11];
+        break;
+      case ( group == "Miracle Tree Reconstruction" ) :
+        color = colors[11];
+        break;
     }
     return color;
   }

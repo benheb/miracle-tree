@@ -10,7 +10,7 @@
         "location" : "Planner Tokyo Stamp Cooperative Society"
       },
       "images" : [
-        { "url" : "img/branches-1.jpeg" }
+        { "url" : "img/stamps-1.jpeg" }
       ]
     }
   },{
@@ -24,10 +24,10 @@
         "location" : "Tsurumi Stamp"
       },
       "images" : [
-        { "url" : "img/branches-3.jpeg" },
-        { "url" : "img/branches-4.jpeg" },
-        { "url" : "img/branches-5.jpeg" },
-        { "url" : "img/branches-6.jpeg" }
+        { "url" : "img/stamps-3.jpeg" },
+        { "url" : "img/stamps-4.jpeg" },
+        { "url" : "img/stamps-5.jpeg" },
+        { "url" : "img/stamps-6.jpeg" }
       ]
     }
   },{
@@ -42,7 +42,7 @@
         "story" : "Modification of a piece cut from the branch"
       },
       "images" : [
-        { "url" : "img/branches-2.jpeg" }
+        { "url" : "img/stamps-2.jpeg" }
       ]
     }
   },{
@@ -100,12 +100,44 @@
     "properties" : {
       "info" : {
         "group" : "Miracle Tree Trunks",
-        "location" : "",
+        "location" : "Kado Corporation",
         "story" : "Kado Corporation (tree-carbon assembly)"
       },
       "images" : [
         { "url" : "img/trunk-b-1.jpeg" },
         { "url" : "img/trunk-b-2.jpeg" }
+      ]
+    }
+  },{
+    "geometry" : {
+      "type": "Point",
+      "coordinates" : [135.868196,35.00105]
+    },
+    "properties" : {
+      "info" : {
+        "group" : "Miracle Tree Trunks",
+        "location" : "Yoshida Biological Laboratory",
+        "story" : "Preservative treatment. Fluorine coating"
+      },
+      "images" : [
+        { "url" : "img/trunk-c-1.gif" },
+        { "url" : "img/trunk-c-2.gif" }
+      ]
+    }
+  },{
+    "geometry" : {
+      "type": "Point",
+      "coordinates" : [137.951021,35.762558]
+    },
+    "properties" : {
+      "info" : {
+        "group" : "Miracle Tree Trunks",
+        "location" : "",
+        "story" : ""
+      },
+      "images" : [
+        { "url" : "img/trunk-d-1.jpeg" },
+        { "url" : "img/trunk-d-2.jpeg" }
       ]
     }
   },{
@@ -129,7 +161,181 @@
         
       ]
     }
+  },{
+    "geometry" : {
+      "type": "Point",
+      "coordinates" : [141.630006,39.015076]
+    },
+    "properties" : {
+      "info" : {
+        "group" : "Miracle Tree Shipping",
+        "location" : "",
+        "story" : "The trunks going to Yatomi Seizai in Aichi prefecture. <br /> The branches going to Paw in Kanagawa prefecture."
+      },
+      "images" : [
+        { "url" : "img/shipping-1.jpeg" }
+      ]
+    }
+  },{
+    "geometry" : {
+      "type": "Point",
+      "coordinates" : [140.872307,38.253174]
+    },
+    "properties" : {
+      "info" : {
+        "group" : "Tohoku University",
+        "location" : "",
+        "story" : ""
+      },
+      "images" : [
+        { "url" : "img/tohoku-1.jpeg" }
+      ]
+    }
+  },{
+    "geometry" : {
+      "type": "Point",
+      "coordinates" : [139.760097,35.708]
+    },
+    "properties" : {
+      "info" : {
+        "group" : "Announced Dead",
+        "location" : "",
+        "story" : "Japanese Landscape Association"
+      },
+      "images" : [
+        { "url" : "img/announced-dead-1.jpeg" }
+      ]
+    }
+  },{
+    "geometry" : {
+      "type": "Point",
+      "coordinates" : [139.735872,35.674946]
+    },
+    "properties" : {
+      "info" : {
+        "group" : "Announced Dead",
+        "location" : "",
+        "story" : "Japanese Greenery Research and Denvelopment Center"
+      },
+      "images" : [
+        { "url" : "img/announced-dead-1.jpeg" }
+      ]
+    }
+  },{
+    "geometry" : {
+      "type": "Point",
+      "coordinates" : [139.676451,35.652555]
+    },
+    "properties" : {
+      "info" : {
+        "group" : "Announced Dead",
+        "location" : "",
+        "story" : "Japanese Institute of Landscape Architecture"
+      },
+      "images" : [
+        { "url" : "img/announced-dead-1.jpeg" }
+      ]
+    }
+  },{
+    "geometry" : {
+      "type": "Point",
+      "coordinates" : [139.776071,35.62983]
+    },
+    "properties" : {
+      "info" : {
+        "group" : "Miracle Tree Planning",
+        "location" : "",
+        "story" : "Received an order from the City of Rikuzen Takata 09-06-2012"
+      },
+      "images" : [
+        { "url" : "img/planning-1.jpeg" },
+        { "url" : "img/planning-2.jpeg" }
+      ]
+    }
+  },{
+    "geometry" : {
+      "type": "Point",
+      "coordinates" : [141.625499,39.003225]
+    },
+    "properties" : {
+      "info" : {
+        "group" : "Miracle Tree Uprooted",
+        "location" : "",
+        "story" : ""
+      },
+      "images" : [
+        { "url" : "img/uprooted-1.jpeg" }
+      ]
+    }
+  },{
+    "geometry" : {
+      "type": "Point",
+      "coordinates" : [139.400862,35.526119]
+    },
+    "properties" : {
+      "info" : {
+        "group" : "Miracle Tree Branches",
+        "location" : "",
+        "story" : ""
+      },
+      "images" : [
+        { "url" : "img/branches-1.jpeg" },
+        { "url" : "img/branches-2.jpeg" },
+        { "url" : "img/branches-3.jpeg" },
+        { "url" : "img/branches-4.jpeg" },
+        { "url" : "img/branches-5.jpeg" }
+      ]
+    }
+  },{
+    "geometry" : {
+      "type": "Point",
+      "coordinates" : [139.564787,35.921906]
+    },
+    "properties" : {
+      "info" : {
+        "group" : "Miracle Tree Recycling",
+        "location" : "JC Next",
+        "story" : ""
+      },
+      "images" : [
+        { "url" : "img/recycled-1.jpeg" },
+        { "url" : "img/recycled-2.jpeg" },
+        { "url" : "img/recycled-3.jpeg" },
+        { "url" : "img/recycled-4.jpeg" }
+      ]
+    }
+  },{
+    "geometry" : {
+      "type": "Point",
+      "coordinates" : [135.804843,34.988724]
+    },
+    "properties" : {
+      "info" : {
+        "group" : "Miracle Tree Rings",
+        "location" : "Miracle Tree Uprooted",
+        "story" : ""
+      },
+      "images" : [
+        { "url" : "img/rings-1.jpeg" }
+      ]
+    }
+  },{
+    "geometry" : {
+      "type": "Point",
+      "coordinates" : [139.734548,35.669185]
+    },
+    "properties" : {
+      "info" : {
+        "group" : "Miracle Tree Reconstruction",
+        "location" : "The Reconstruction Agency established in 2012 uses its sign for a part of the Miracle tree",
+        "story" : ""
+      },
+      "images" : [
+        { "url" : "img/reconstruction-1.jpeg" }
+      ]
+    }
   }
+  
   
   
   ]
