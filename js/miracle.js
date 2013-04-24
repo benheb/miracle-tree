@@ -244,7 +244,8 @@
   function styler( data ) {
     var group = data.properties.info.group;
     //var colors = [ "rgb(253,219,199)", "rgb(247,247,247)", "rgb(209,229,240)", "rgb(146,197,222)", "rgb(67,147,195)", "rgb(33,102,172)", "rgb(5,48,97)"]
-    var colors = ["rgb(215,48,39)", "rgb(244,109,67)", "rgb(253,174,97)", "rgb(254,224,144)", "rgb(255,255,191)", "rgb(224,243,248)", "rgb(171,217,233)", "rgb(116,173,209)", "rgb(69,117,180)"] 
+    var colors = ["rgb(215,48,39)", "rgb(244,109,67)", "rgb(253,174,97)", "rgb(254,224,144)", "rgb(255,255,191)", "rgb(224,243,248)", 
+      "rgb(171,217,233)", "rgb(116,173,209)", "rgb(69,117,180)", "#66CCFF", "#3399FF", "#0033FF", "#000066", "#66CC99"] 
     var color;
     
     switch ( true ) {
@@ -285,7 +286,10 @@
         color = colors[11];
         break;
       case ( group == "Miracle Tree Reconstruction" ) :
-        color = colors[11];
+        color = colors[12];
+        break;
+      case ( group == "Miracle Tree Recycling" ) :
+        color = colors[13];
         break;
     }
     return color;
