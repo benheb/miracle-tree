@@ -269,7 +269,7 @@
       case ( group == "Tohoku University" ) :
         color = colors[6];
         break;
-      case ( group == "Announced Dead" ) :
+      case ( group == "Preservation Team" ) :
         color = colors[7];
         break;
       case ( group == "Miracle Tree Planning" ) :
