@@ -25,6 +25,7 @@ body {
   height: 70px;
   box-shadow: 0px -12px 44px 0px #999;
   overflow: hidden;
+  background:#EEE;
   z-index: 1000;
 }
 #header h2 {
@@ -116,7 +117,7 @@ a:hover {
 #intro {
   font-size: 17pt;
   line-height: 59px;
-  color: #777;
+  color: #555;
   margin: 10px;
   text-align: center;
 }
@@ -233,8 +234,8 @@ a:hover {
 }
 
 .info-window-group {
-  color: #444;
-  font-size: 13pt;
+  color: #333;
+  font-size: 17pt;
   margin-bottom: 10px;
   margin-top: 20px;
   font-weight: bold;

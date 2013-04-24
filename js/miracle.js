@@ -29,7 +29,7 @@
    
    projection = d3.geo.mercator()
     .rotate([90, 1])
-    .center([-133,37 ])
+    .center([-132,37 ])
     .scale(4000);
     
     path = d3.geo.path()
@@ -68,26 +68,13 @@
     addJapan();
   }
   
-  /*
-   * Add countries and state boundaries
-   * TODO: add counties? 
-   * 
-  function addCountries() {
-    d3.json("world-110m.json", function(error, world) {
-      svg.append("path")
-        .datum(topojson.object(world, world.objects.land))
-        .attr("class", "land")
-        .attr("d", path);
-      addJapan();
-    });
-  }
-  */
+  
   function addJapan() {
     d3.json("data/japan.json", function(data) {
       svg.selectAll("path").data(data.features)
       .enter().append("path")
       .attr("d", path)
-      .style("fill", function() { return "#666" });
+      .style("fill", function() { return "#333" });
       //.style("fill", function() { return "#44aaee" });
       //.on("mouseover", function(e){d3.select(this).style("fill", "#5522aa")})
       //.on("mouseout", function(e){d3.select(this).style("fill", "#44aaee")});
@@ -166,10 +153,10 @@
               return "translate(" + projection([d.geometry.coordinates[0],d.geometry.coordinates[1]]) + ")";
             }
           })
-          .attr('x', '-25px')
-          .attr('y', '-50px')
-          .attr("width", "50px")
-          .attr("height", "50px");
+          .attr('x', '-35px')
+          .attr('y', '-60px')
+          .attr("width", "70px")
+          .attr("height", "60px");
       }
     });
   }
@@ -207,7 +194,7 @@
       });
     
     for (var i=0;i<locs.length;i++) {
-      if ( locs[ i ].lat !== lat ) {
+      //if ( locs[ i ].lat !== lat ) {
         var lat1 = locs[ i ].lat;
         var lon1 = locs[ i ].lon;
       
@@ -218,16 +205,16 @@
         .enter().append('line')
           .style("stroke", styler)
           .attr('class', 'lines')
-          .attr("x1", projection([lon,lat])[0])
-          .attr("y1", projection([lon,lat])[1])
-          .attr("x2", projection([lon,lat])[0])
-          .attr("y2", projection([lon,lat])[1])
+          .attr("x1", projection([141.625499,39.003225])[0])
+          .attr("y1", projection([141.625499,39.003225])[1])
+          .attr("x2", projection([141.625499,39.003225])[0])
+          .attr("y2", projection([141.625499,39.003225])[1])
           .transition()
-            .duration(900)
+            .duration(700)
             .attr("x2", projection([lon1,lat1])[0])
             .attr("y2", projection([lon1,lat1])[1]);
        }
-    }  
+    //}  
   }
   
   function exit() {
@@ -244,8 +231,16 @@
   function styler( data ) {
     var group = data.properties.info.group;
     //var colors = [ "rgb(253,219,199)", "rgb(247,247,247)", "rgb(209,229,240)", "rgb(146,197,222)", "rgb(67,147,195)", "rgb(33,102,172)", "rgb(5,48,97)"]
-    var colors = ["rgb(215,48,39)", "rgb(244,109,67)", "rgb(253,174,97)", "rgb(254,224,144)", "rgb(255,255,191)", "rgb(224,243,248)", 
-      "rgb(171,217,233)", "rgb(116,173,209)", "rgb(69,117,180)", "#66CCFF", "#3399FF", "#0033FF", "#000066", "#66CC99"] 
+    //var colors = ["rgb(247,251,255)", "rgb(222,235,247)", "rgb(198,219,239)", "rgb(158,202,225)", "rgb(107,174,214)", 
+      //"rgb(66,146,198)", "rgb(33,113,181)", "rgb(8,81,156)", "rgb(8,48,107)", "#0096ad", "#96ae8b", "#00A480", "#006B53", "#66CC99"]
+    //var colors = ["#FFF500", "#35D2AB", "#B7F200", "#F76F87", "#38B2CE", "#04819E", "#00BF32", "#FFF773", "#FFC373", "#3F92D2", 
+    //  "#64A8D1", "#3E94D1", "#FF7373", "#E60042"]
+    var colors = [
+      //"#FF0033", "#FFFF66", "#FF6699", "#FFCC33", "#FF9999", "#993366","#FF9933", "#FFCC99", "#FFFFCC",
+      //"#CC3366", "#CC0000", "#FF3300", "#EEEEEE","#FF3366"
+      "#0066FF", "#00CCFF", "#33FFFF", "#99FFFF", "#99FFCC", "#66CCCC","#33FFCC", "#00FFCC", "#0066CC",
+      "#00CC99", "#99FF99", "#00CC66", "#CCC","#3300FF"
+    ] 
     var color;
     
     switch ( true ) {
