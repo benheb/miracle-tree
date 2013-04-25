@@ -194,25 +194,30 @@
       });
     
     for (var i=0;i<locs.length;i++) {
-      //if ( locs[ i ].lat !== lat ) {
-        var lat1 = locs[ i ].lat;
-        var lon1 = locs[ i ].lon;
+      var lat1 = locs[ i ].lat,
+        lon1 = locs[ i ].lon,
+        lines = svg.append('g'),
+        start;
       
-        var lines = svg.append('g');
-          
-        lines.selectAll("line")
-          .data([d])
-        .enter().append('line')
-          .style("stroke", styler)
-          .attr('class', 'lines')
-          .attr("x1", projection([141.625499,39.003225])[0])
-          .attr("y1", projection([141.625499,39.003225])[1])
-          .attr("x2", projection([141.625499,39.003225])[0])
-          .attr("y2", projection([141.625499,39.003225])[1])
-          .transition()
-            .duration(700)
-            .attr("x2", projection([lon1,lat1])[0])
-            .attr("y2", projection([lon1,lat1])[1]);
+      if ( i === 0 ) {
+        start = [ 141.625499,39.003225 ];
+      } else {
+        start = [ locs[ i - 1 ].lon, locs[ i - 1].lat ]; 
+      }
+        
+      lines.selectAll("line")
+        .data([ d ])
+      .enter().append('line')
+        .style("stroke", styler)
+        .attr('class', 'lines')
+        .attr("x1", projection( start )[ 0 ])
+        .attr("y1", projection( start )[ 1 ])
+        .attr("x2", projection( start )[ 0 ])
+        .attr("y2", projection( start )[ 1 ])
+        .transition()
+          .duration(700)
+          .attr("x2", projection([lon1,lat1])[0])
+          .attr("y2", projection([lon1,lat1])[1]);
        }
     //}  
   }

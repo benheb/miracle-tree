@@ -95,22 +95,6 @@
   },{
     "geometry" : {
       "type": "Point",
-      "coordinates" : [134.544308,34.846456]
-    },
-    "properties" : {
-      "info" : {
-        "group" : "Miracle Tree Trunks",
-        "location" : "Kado Corporation",
-        "story" : "Kado Corporation (tree-carbon assembly)"
-      },
-      "images" : [
-        { "url" : "img/trunk-b-1.jpeg" },
-        { "url" : "img/trunk-b-2.jpeg" }
-      ]
-    }
-  },{
-    "geometry" : {
-      "type": "Point",
       "coordinates" : [135.868196,35.00105]
     },
     "properties" : {
@@ -138,6 +122,22 @@
       "images" : [
         { "url" : "img/trunk-d-1.jpeg" },
         { "url" : "img/trunk-d-2.jpeg" }
+      ]
+    }
+  },{
+    "geometry" : {
+      "type": "Point",
+      "coordinates" : [134.544308,34.846456]
+    },
+    "properties" : {
+      "info" : {
+        "group" : "Miracle Tree Trunks",
+        "location" : "Kado Corporation",
+        "story" : "Kado Corporation (tree-carbon assembly)"
+      },
+      "images" : [
+        { "url" : "img/trunk-b-1.jpeg" },
+        { "url" : "img/trunk-b-2.jpeg" }
       ]
     }
   },{
