@@ -56,7 +56,7 @@
       "info" : {
         "group" : "Miracle Tree Cloning",
         "location" : "Sumitomo Forestry Co., LTD",
-        "story" : "Cloning success around 12/2012"
+        "story" : "Corns from pine trees in the area were used to extract seeds."
       },
       "images" : [
         { "url" : "img/cloning.jpeg" }
@@ -201,8 +201,8 @@
     "properties" : {
       "info" : {
         "group" : "Tohoku University",
-        "location" : "",
-        "story" : ""
+        "location" : "Tohoku University",
+        "story" : "Testing the structural integrity of the modified tree with a model. "
       },
       "images" : [
         { "url" : "img/tohoku-1.jpeg" }
@@ -247,7 +247,7 @@
       "info" : {
         "group" : "Preservation Team",
         "location" : "",
-        "story" : "Japanese Institute of Landscape Architecture"
+        "story" : "Japanese Institute of Landscape Architecture."
       },
       "images" : [
         { "url" : "img/announced-dead-1.jpeg" }
@@ -262,7 +262,7 @@
       "info" : {
         "group" : "Miracle Tree Planning",
         "location" : "",
-        "story" : "Received an order from the City of Rikuzen Takata 09-06-2012"
+        "story" : "Nomura Co., Ltd’s plan for monumentalization of the tree was chosen by Rikuzentakata City. The total cost of the plan is $1,500,000 "
       },
       "images" : [
         { "url" : "img/planning-1.jpeg" },
@@ -292,8 +292,8 @@
     "properties" : {
       "info" : {
         "group" : "Miracle Tree Branches",
-        "location" : "",
-        "story" : ""
+        "location" : "PAW",
+        "story" : "Received in 09/15/12 and the replication project was done in 02/26/13."
       },
       "images" : [
         { "url" : "img/branches-1.jpeg" },
@@ -312,7 +312,7 @@
       "info" : {
         "group" : "Miracle Tree Recycling",
         "location" : "JC Next",
-        "story" : ""
+        "story" : "Production of goods such as letter set, bookmark, business card with recycled the miracle tree chips. Some of the profits go to the original owner of the tree, Japan Youth Hostel Association."
       },
       "images" : [
         { "url" : "img/recycled-1.jpeg" },
@@ -330,7 +330,7 @@
       "info" : {
         "group" : "Miracle Tree Rings",
         "location" : "Miracle Tree Uprooted",
-        "story" : ""
+        "story" : "Determined to be 173 year-old in 02/26/2013. This defied the initial belief that the tree was about 200 to 270-year-old."
       },
       "images" : [
         { "url" : "img/rings-1.jpeg" }
