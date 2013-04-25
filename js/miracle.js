@@ -177,7 +177,7 @@
     var story = ( d.properties.info.story ) ? d.properties.info.story : "";
     var images = d.properties.images;
     
-    $('#info-window-inner').html( "<div class='info-window-group'>" + group + "</div><div class='info-window-location'>" + location + "</div>" );
+    $('#info-window-inner').html( "<div class='info-window-group'>" + group + "</div><div class='info-window-location'>" + location + "</div><div style='color:#000'>" +lat +", "+lon+ "</div>" );
     
     if ( images.length ) {
       for (i in images) {
