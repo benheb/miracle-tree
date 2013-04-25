@@ -83,7 +83,7 @@
     "properties" : {
       "info" : {
         "group" : "Miracle Tree Trunks",
-        "location" : "Yatomi lumberer",
+        "location" : "Yatomi Lumber",
         "story" : "Received the trunks 09/16/12"
       },
       "images" : [
@@ -100,7 +100,7 @@
     "properties" : {
       "info" : {
         "group" : "Miracle Tree Trunks",
-        "location" : "Yoshida Biological Laboratory",
+        "location" : "Yoshida Biology Laboratory",
         "story" : "Preservative treatment. Fluorine coating"
       },
       "images" : [
@@ -116,7 +116,7 @@
     "properties" : {
       "info" : {
         "group" : "Miracle Tree Trunks",
-        "location" : "",
+        "location" : "Shinano Kougyo",
         "story" : ""
       },
       "images" : [

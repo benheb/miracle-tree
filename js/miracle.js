@@ -193,10 +193,17 @@
         if (d.properties.info.group == group) locs.push( {lat : d.geometry.coordinates[1], lon: d.geometry.coordinates[0] }) 
       });
     
-    for (var i=0;i<locs.length;i++) {
-      var lat1 = locs[ i ].lat,
-        lon1 = locs[ i ].lon,
-        lines = svg.append('g'),
+    for (var i=0;i<=locs.length;i++) {
+      
+      if ( i !== locs.length ) {
+        var lat1 = locs[ i ].lat;
+        var lon1 = locs[ i ].lon;
+      } else {
+        var lat1 = 39.003225;
+        var lon1 = 141.625499;
+      }
+      
+      var  lines = svg.append('g'),
         start;
       
       if ( i === 0 ) {
