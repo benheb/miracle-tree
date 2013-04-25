@@ -118,6 +118,37 @@
         var data = collection.features;
         
         svg.append("g")
+          .attr("class", "icon")
+        .selectAll('image')
+          .data( data )
+        .enter().append('svg:image')
+          .attr("class", "tree-icon")  
+          .attr("xlink:href", "img/miracle-tree.png")
+          .attr("transform", function(d) { 
+            if (d.geometry.coordinates[ 0 ] === 141.625499) {
+              return "translate(" + projection([d.geometry.coordinates[0],d.geometry.coordinates[1]]) + ")";
+            }
+          })
+          .attr('x', '-35px')
+          .attr('y', '-60px')
+          .attr("width", "70px")
+          .attr("height", "60px")
+          .on('mouseover', function( d ) {
+            d3.select(this)
+              .transition()
+                .duration(300)
+                .attr('r', 12)
+                .attr('d', hoverTree);
+          })
+          .on("mouseout", function( d ) {
+            d3.select(this)
+              .transition()
+                .duration(300)
+                .attr('r', 5)
+                .attr('d', exit);
+          });
+        
+        svg.append("g")
           .attr("class", "circles")
         .selectAll("circle")
           .data( data )
@@ -141,22 +172,6 @@
                 .attr('d', exit);
           });
        
-        svg.append("g")
-          .attr("class", "icon")
-        .selectAll('image')
-          .data( data )
-        .enter().append('svg:image')
-          .attr("class", "tree-icon")  
-          .attr("xlink:href", "img/miracle-tree.png")
-          .attr("transform", function(d) { 
-            if (d.geometry.coordinates[ 0 ] === 141.625499) {
-              return "translate(" + projection([d.geometry.coordinates[0],d.geometry.coordinates[1]]) + ")";
-            }
-          })
-          .attr('x', '-35px')
-          .attr('y', '-60px')
-          .attr("width", "70px")
-          .attr("height", "60px");
       }
     });
   }
@@ -177,7 +192,7 @@
     var story = ( d.properties.info.story ) ? d.properties.info.story : "";
     var images = d.properties.images;
     
-    $('#info-window-inner').html( "<div class='info-window-group'>" + group + "</div><div class='info-window-location'>" + location + "</div><div style='color:#000'>" +lat +", "+lon+ "</div>" );
+    $('#info-window-inner').html( "<div class='info-window-group'>" + group + "</div><div class='info-window-location'>" + location + "</div><div class='info-window-about'>"+ story +"</div>" );
     
     if ( images.length ) {
       for (i in images) {
@@ -229,6 +244,54 @@
     //}  
   }
   
+  /*
+   * Hover over tree - draw all lines
+   * 
+   */
+  function hoverTree ( d ) {
+    $('#intro').hide();
+    $('#info-window-inner').html("");
+    
+    var location = d.properties.info.location;
+    var lat = d.geometry.coordinates[1];
+    var lon = d.geometry.coordinates[0];
+    
+    //lines
+    var locs = [];
+    d3.selectAll('.locations')
+      .attr("attr", function(d) { 
+        locs.push( {lat : d.geometry.coordinates[1], lon: d.geometry.coordinates[0] }) 
+      });
+    
+    for (var i=0;i<locs.length;i++) {
+      var lat1 = locs[ i ].lat;
+      var lon1 = locs[ i ].lon;
+      var  lines = svg.append('g'),
+        start;
+      
+      if ( i === 0 ) {
+        start = [ 141.625499,39.003225 ];
+      } else {
+        start = [ locs[ i - 1 ].lon, locs[ i - 1].lat ]; 
+      }
+        
+      lines.selectAll("line")
+        .data([ d ])
+      .enter().append('line')
+        .style("stroke", "#FEFEFE")
+        .attr('class', 'lines')
+        .attr("x1", projection( start )[ 0 ])
+        .attr("y1", projection( start )[ 1 ])
+        .attr("x2", projection( start )[ 0 ])
+        .attr("y2", projection( start )[ 1 ])
+        .transition()
+          .duration(700)
+          .attr("x2", projection([lon1,lat1])[0])
+          .attr("y2", projection([lon1,lat1])[1]);
+       }
+    //}  
+  }
+  
   function exit() {
     d3.selectAll(".lines").remove(); 
         
@@ -244,12 +307,7 @@
     var group = data.properties.info.group;
     //var colors = [ "rgb(253,219,199)", "rgb(247,247,247)", "rgb(209,229,240)", "rgb(146,197,222)", "rgb(67,147,195)", "rgb(33,102,172)", "rgb(5,48,97)"]
     //var colors = ["rgb(247,251,255)", "rgb(222,235,247)", "rgb(198,219,239)", "rgb(158,202,225)", "rgb(107,174,214)", 
-      //"rgb(66,146,198)", "rgb(33,113,181)", "rgb(8,81,156)", "rgb(8,48,107)", "#0096ad", "#96ae8b", "#00A480", "#006B53", "#66CC99"]
-    //var colors = ["#FFF500", "#35D2AB", "#B7F200", "#F76F87", "#38B2CE", "#04819E", "#00BF32", "#FFF773", "#FFC373", "#3F92D2", 
-    //  "#64A8D1", "#3E94D1", "#FF7373", "#E60042"]
     var colors = [
-      //"#FF0033", "#FFFF66", "#FF6699", "#FFCC33", "#FF9999", "#993366","#FF9933", "#FFCC99", "#FFFFCC",
-      //"#CC3366", "#CC0000", "#FF3300", "#EEEEEE","#FF3366"
       "#0066FF", "#00CCFF", "#33FFFF", "#99FFFF", "#99FFCC", "#66CCCC","#33FFCC", "#00FFCC", "#0066CC",
       "#00CC99", "#99FF99", "#00CC66", "#CCC","#3300FF"
     ] 
@@ -270,6 +328,7 @@
         break;
       case ( group == "Miracle Tree Cutting" ) :
         color = colors[4];
+        console.log('color?')
         break;
       case ( group == "Miracle Tree Shipping" ) :
         color = colors[5];
@@ -298,6 +357,7 @@
       case ( group == "Miracle Tree Recycling" ) :
         color = colors[13];
         break;
+      
     }
     return color;
   }

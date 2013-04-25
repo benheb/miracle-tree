@@ -7,7 +7,8 @@
     "properties" : {
       "info" : {
         "group" : "Miracle Tree Stamps",
-        "location" : "Planner Tokyo Stamp Cooperative Society"
+        "location" : "",
+        "story" : "Planner Tokyo Stamp Cooperative Society."
       },
       "images" : [
         { "url" : "img/stamps-1.jpeg" }
@@ -21,7 +22,8 @@
     "properties" : {
       "info" : {
         "group" : "Miracle Tree Stamps",
-        "location" : "Tsurumi Stamp"
+        "location" : "Tsurumi Stamp",
+        "story" : "The reinforced piece was chiseled by Tsurumi Stamp to be used by the Mayor of Rikuzentakata City."
       },
       "images" : [
         { "url" : "img/stamps-3.jpeg" },
@@ -38,8 +40,8 @@
     "properties" : {
       "info" : {
         "group" : "Miracle Tree Stamps",
-        "location" : "WPCs (Wood Plastic Composites)",
-        "story" : "Modification of a piece cut from the branch"
+        "location" : "Daiken Corporation",
+        "story" : "The piece of the branch was reinforced by Daiken Corporation via WPCs (Wood Plastic Composites) modification technology."
       },
       "images" : [
         { "url" : "img/stamps-2.jpeg" }
@@ -84,7 +86,7 @@
       "info" : {
         "group" : "Miracle Tree Trunks",
         "location" : "Yatomi Lumber",
-        "story" : "Received the trunks 09/16/12"
+        "story" : "Received the trunks on 09/16/2012. Invented a special drilling machine to drill the inside of the trunks to make them hollow."
       },
       "images" : [
         { "url" : "img/trunk-a-1.jpeg" },
@@ -101,7 +103,7 @@
       "info" : {
         "group" : "Miracle Tree Trunks",
         "location" : "Yoshida Biology Laboratory",
-        "story" : "Preservative treatment. Fluorine coating"
+        "story" : "Preservative treatment with fluorine coatings."
       },
       "images" : [
         { "url" : "img/trunk-c-1.gif" },
@@ -117,7 +119,7 @@
       "info" : {
         "group" : "Miracle Tree Trunks",
         "location" : "Shinano Kougyo",
-        "story" : ""
+        "story" : "Building CFRP (Carbon Fiber Reinforced Plastics) shafts."
       },
       "images" : [
         { "url" : "img/trunk-d-1.jpeg" },
@@ -133,7 +135,7 @@
       "info" : {
         "group" : "Miracle Tree Trunks",
         "location" : "Kado Corporation",
-        "story" : "Kado Corporation (tree-carbon assembly)"
+        "story" : "Assembling the CFRP shafts with the trunks"
       },
       "images" : [
         { "url" : "img/trunk-b-1.jpeg" },
@@ -144,6 +146,21 @@
     "geometry" : {
       "type": "Point",
       "coordinates" : [141.625499,39.003225]
+    },
+    "properties" : {
+      "info" : {
+        "group" : "Miracle Tree",
+        "location" : "",
+        "story" : ""
+      },
+      "images" : [
+        
+      ]
+    }
+  },{
+    "geometry" : {
+      "type": "Point",
+      "coordinates" : [141.6,39.003225]
     },
     "properties" : {
       "info" : {

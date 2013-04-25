@@ -235,7 +235,7 @@ a:hover {
 
 .info-window-group {
   color: #333;
-  font-size: 17pt;
+  font-size: 18pt;
   margin-bottom: 10px;
   margin-top: 20px;
   font-weight: bold;
@@ -243,7 +243,15 @@ a:hover {
 }
 
 .info-window-location {
-  color: #888;
+  color: #0088cc;
+  margin-left: 15px;
+  margin-top: -7px;
+  font-size: 14pt;
+  margin-bottom: 10px;
+}
+
+.info-window-about {
+  color: #444;
   margin-left: 15px;
   margin-top: -7px;
   font-size: 11pt;
