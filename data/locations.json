@@ -344,8 +344,8 @@
     "properties" : {
       "info" : {
         "group" : "Miracle Tree Reconstruction",
-        "location" : "The Reconstruction Agency established in 2012 uses its sign for a part of the Miracle tree",
-        "story" : ""
+        "location" : "Sankaidou Building",
+        "story" : "Established in 02/02/2012. Its signpost’s material came from Takatamatsubara"
       },
       "images" : [
         { "url" : "img/reconstruction-1.jpeg" }
